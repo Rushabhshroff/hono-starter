@@ -1,0 +1,15 @@
+name = "backend"
+workers_dev = true
+main = "index.ts"
+compatibility_date = "2022-04-27"
+node_compat = true
+
+[env.production]
+name = "backend"
+vars = { WORKER_ENV = "production", CF_ACCOUNT_ID= "", WEBSITE_URL="",SES_REGION='' }
+d1_databases = [{binding = "DB",database_name = "",database_id = ""}]
+analytics_engine_datasets = [{binding = "ANALYTICS",dataset = "apikite_analytics"}]
+
+[env.local]
+vars = {WORKER_ENV = "local",CF_ACCOUNT_ID= "", WEBSITE_URL="",SES_REGION='' }
+d1_databases = [{binding = "DB",database_name = "",database_id = ""}]
